@@ -7,6 +7,14 @@ var map = new ol.Map({
          maxZoom: 28, minZoom: 1
     })
 });
+var scaleLineControl = new ol.control.ScaleLine({
+    units: 'metric',  // Ensures meters/kilometers are used
+    bar: true,        // Enables a bar-style scale
+    steps: 4,         // Number of divisions on the scale
+    text: true,       // Displays numerical values on the scale
+    minWidth: 140     // Minimum width of the scale bar in pixels
+});
+map.addControl(scaleLineControl);
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
 map.getView().fit([16437368.413103, -739433.569431, 16450166.545974, -731141.754829], map.getSize());
