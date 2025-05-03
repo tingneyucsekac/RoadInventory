@@ -1,7 +1,7 @@
 var size = 0;
 var placement = 'point';
 
-var style_riversandcreeks_5 = function(feature, resolution){
+var style_chainage_150m_int_reviewed_15 = function(feature, resolution){
     var context = {
         feature: feature,
         variables: {}
@@ -20,7 +20,8 @@ var style_riversandcreeks_5 = function(feature, resolution){
         labelText = String("");
     }
     var style = [ new ol.style.Style({
-        stroke: new ol.style.Stroke({color: 'rgba(116,116,253,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 0.836}),fill: new ol.style.Fill({color: 'rgba(113,140,238,1.0)'}),
+        image: new ol.style.Circle({radius: 4.0 + size,
+            displacement: [0, 0], stroke: new ol.style.Stroke({color: 'rgba(0,0,0,1.0)', lineDash: null, lineCap: 'butt', lineJoin: 'miter', width: 1.52}), fill: new ol.style.Fill({color: 'rgba(255,255,255,1.0)'})}),
         text: createTextStyle(feature, resolution, labelText, labelFont,
                               labelFill, placement, bufferColor,
                               bufferWidth)

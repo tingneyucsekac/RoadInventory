@@ -36,35 +36,35 @@ var wms_layers = [];
                 url: 'https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}'
             })
         });
-var format_catchment_and_rivers_3 = new ol.format.GeoJSON();
-var features_catchment_and_rivers_3 = format_catchment_and_rivers_3.readFeatures(json_catchment_and_rivers_3, 
+var format_CatchmentandRivers_3 = new ol.format.GeoJSON();
+var features_CatchmentandRivers_3 = format_CatchmentandRivers_3.readFeatures(json_CatchmentandRivers_3, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_catchment_and_rivers_3 = new ol.source.Vector({
+var jsonSource_CatchmentandRivers_3 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_catchment_and_rivers_3.addFeatures(features_catchment_and_rivers_3);
-var lyr_catchment_and_rivers_3 = new ol.layer.Vector({
+jsonSource_CatchmentandRivers_3.addFeatures(features_CatchmentandRivers_3);
+var lyr_CatchmentandRivers_3 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_catchment_and_rivers_3, 
-                style: style_catchment_and_rivers_3,
-                popuplayertitle: 'catchment_and_rivers',
+                source:jsonSource_CatchmentandRivers_3, 
+                style: style_CatchmentandRivers_3,
+                popuplayertitle: 'Catchment and Rivers',
                 interactive: true,
-    title: 'catchment_and_rivers<br />\
-    <img src="styles/legend/catchment_and_rivers_3_0.png" /> Bagec<br />\
-    <img src="styles/legend/catchment_and_rivers_3_1.png" /> Bahaning<br />\
-    <img src="styles/legend/catchment_and_rivers_3_2.png" /> Baring<br />\
-    <img src="styles/legend/catchment_and_rivers_3_3.png" /> Gononvo<br />\
-    <img src="styles/legend/catchment_and_rivers_3_4.png" /> Mozu<br />\
-    <img src="styles/legend/catchment_and_rivers_3_5.png" /> Ororong<br />\
-    <img src="styles/legend/catchment_and_rivers_3_6.png" /> Qararang<br />\
-    <img src="styles/legend/catchment_and_rivers_3_7.png" /> Qazec (b)<br />\
-    <img src="styles/legend/catchment_and_rivers_3_8.png" /> Qazec (c)<br />\
-    <img src="styles/legend/catchment_and_rivers_3_9.png" /> Qohoc<br />\
-    <img src="styles/legend/catchment_and_rivers_3_10.png" /> Toko<br />\
-    <img src="styles/legend/catchment_and_rivers_3_11.png" /> Uwac<br />\
-    <img src="styles/legend/catchment_and_rivers_3_12.png" /> Ziwazigo<br />\
-    <img src="styles/legend/catchment_and_rivers_3_13.png" /> Zomborong<br />\
-    <img src="styles/legend/catchment_and_rivers_3_14.png" /> <br />' });
+    title: 'Catchment and Rivers<br />\
+    <img src="styles/legend/CatchmentandRivers_3_0.png" /> Bagec<br />\
+    <img src="styles/legend/CatchmentandRivers_3_1.png" /> Bahaning<br />\
+    <img src="styles/legend/CatchmentandRivers_3_2.png" /> Baring<br />\
+    <img src="styles/legend/CatchmentandRivers_3_3.png" /> Gononvo<br />\
+    <img src="styles/legend/CatchmentandRivers_3_4.png" /> Mozu<br />\
+    <img src="styles/legend/CatchmentandRivers_3_5.png" /> Ororong<br />\
+    <img src="styles/legend/CatchmentandRivers_3_6.png" /> Qararang<br />\
+    <img src="styles/legend/CatchmentandRivers_3_7.png" /> Qazec (b)<br />\
+    <img src="styles/legend/CatchmentandRivers_3_8.png" /> Qazec (c)<br />\
+    <img src="styles/legend/CatchmentandRivers_3_9.png" /> Qohoc<br />\
+    <img src="styles/legend/CatchmentandRivers_3_10.png" /> Toko<br />\
+    <img src="styles/legend/CatchmentandRivers_3_11.png" /> Uwac<br />\
+    <img src="styles/legend/CatchmentandRivers_3_12.png" /> Ziwazigo<br />\
+    <img src="styles/legend/CatchmentandRivers_3_13.png" /> Zomborong<br />\
+    <img src="styles/legend/CatchmentandRivers_3_14.png" /> <br />' });
 var format_MapeCatchmentContour_4 = new ol.format.GeoJSON();
 var features_MapeCatchmentContour_4 = format_MapeCatchmentContour_4.readFeatures(json_MapeCatchmentContour_4, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
@@ -192,55 +192,70 @@ var lyr_Roadwidth20m_split_11 = new ol.layer.Vector({
                 interactive: true,
                 title: '<img src="styles/legend/Roadwidth20m_split_11.png" /> Road width 20m_split'
             });
-var format_RiversandCreekLocation_12 = new ol.format.GeoJSON();
-var features_RiversandCreekLocation_12 = format_RiversandCreekLocation_12.readFeatures(json_RiversandCreekLocation_12, 
+var format_RiversandCreek_12 = new ol.format.GeoJSON();
+var features_RiversandCreek_12 = format_RiversandCreek_12.readFeatures(json_RiversandCreek_12, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_RiversandCreekLocation_12 = new ol.source.Vector({
+var jsonSource_RiversandCreek_12 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_RiversandCreekLocation_12.addFeatures(features_RiversandCreekLocation_12);
-var lyr_RiversandCreekLocation_12 = new ol.layer.Vector({
+jsonSource_RiversandCreek_12.addFeatures(features_RiversandCreek_12);
+var lyr_RiversandCreek_12 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_RiversandCreekLocation_12, 
-                style: style_RiversandCreekLocation_12,
-                popuplayertitle: 'Rivers and Creek Location',
+                source:jsonSource_RiversandCreek_12, 
+                style: style_RiversandCreek_12,
+                popuplayertitle: 'Rivers and Creek',
                 interactive: true,
-                title: '<img src="styles/legend/RiversandCreekLocation_12.png" /> Rivers and Creek Location'
+                title: '<img src="styles/legend/RiversandCreek_12.png" /> Rivers and Creek'
             });
-var format_Road_CL_13 = new ol.format.GeoJSON();
-var features_Road_CL_13 = format_Road_CL_13.readFeatures(json_Road_CL_13, 
+var format_Gradient_slope_13 = new ol.format.GeoJSON();
+var features_Gradient_slope_13 = format_Gradient_slope_13.readFeatures(json_Gradient_slope_13, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_Road_CL_13 = new ol.source.Vector({
+var jsonSource_Gradient_slope_13 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_Road_CL_13.addFeatures(features_Road_CL_13);
-var lyr_Road_CL_13 = new ol.layer.Vector({
+jsonSource_Gradient_slope_13.addFeatures(features_Gradient_slope_13);
+var lyr_Gradient_slope_13 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_Road_CL_13, 
-                style: style_Road_CL_13,
+                source:jsonSource_Gradient_slope_13, 
+                style: style_Gradient_slope_13,
+                popuplayertitle: 'Gradient_slope',
+                interactive: true,
+                title: '<img src="styles/legend/Gradient_slope_13.png" /> Gradient_slope'
+            });
+var format_Road_CL_14 = new ol.format.GeoJSON();
+var features_Road_CL_14 = format_Road_CL_14.readFeatures(json_Road_CL_14, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_Road_CL_14 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_Road_CL_14.addFeatures(features_Road_CL_14);
+var lyr_Road_CL_14 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_Road_CL_14, 
+                style: style_Road_CL_14,
                 popuplayertitle: 'Road_CL',
                 interactive: true,
-                title: '<img src="styles/legend/Road_CL_13.png" /> Road_CL'
+                title: '<img src="styles/legend/Road_CL_14.png" /> Road_CL'
             });
-var format_chainage_150m_int_reviewed_14 = new ol.format.GeoJSON();
-var features_chainage_150m_int_reviewed_14 = format_chainage_150m_int_reviewed_14.readFeatures(json_chainage_150m_int_reviewed_14, 
+var format_chainage_150m_int_reviewed_15 = new ol.format.GeoJSON();
+var features_chainage_150m_int_reviewed_15 = format_chainage_150m_int_reviewed_15.readFeatures(json_chainage_150m_int_reviewed_15, 
             {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_chainage_150m_int_reviewed_14 = new ol.source.Vector({
+var jsonSource_chainage_150m_int_reviewed_15 = new ol.source.Vector({
     attributions: ' ',
 });
-jsonSource_chainage_150m_int_reviewed_14.addFeatures(features_chainage_150m_int_reviewed_14);
-var lyr_chainage_150m_int_reviewed_14 = new ol.layer.Vector({
+jsonSource_chainage_150m_int_reviewed_15.addFeatures(features_chainage_150m_int_reviewed_15);
+var lyr_chainage_150m_int_reviewed_15 = new ol.layer.Vector({
                 declutter: false,
-                source:jsonSource_chainage_150m_int_reviewed_14, 
-                style: style_chainage_150m_int_reviewed_14,
+                source:jsonSource_chainage_150m_int_reviewed_15, 
+                style: style_chainage_150m_int_reviewed_15,
                 popuplayertitle: 'chainage_150m_int_reviewed',
                 interactive: true,
-                title: '<img src="styles/legend/chainage_150m_int_reviewed_14.png" /> chainage_150m_int_reviewed'
+                title: '<img src="styles/legend/chainage_150m_int_reviewed_15.png" /> chainage_150m_int_reviewed'
             });
 
-lyr_OSMStandard_0.setVisible(false);lyr_OpenTopoMap_1.setVisible(false);lyr_GoogleSatellite_2.setVisible(true);lyr_catchment_and_rivers_3.setVisible(false);lyr_MapeCatchmentContour_4.setVisible(false);lyr_riversandcreeks_5.setVisible(true);lyr_TargetvillageofRoadConnection_6.setVisible(true);lyr_CulvertCondition_7.setVisible(true);lyr_RoadInundationandDeteriorateLevelofRisk_8.setVisible(false);lyr_LevelofLandslideRisk_9.setVisible(false);lyr_Roadwidth5m_10.setVisible(false);lyr_Roadwidth20m_split_11.setVisible(false);lyr_RiversandCreekLocation_12.setVisible(true);lyr_Road_CL_13.setVisible(true);lyr_chainage_150m_int_reviewed_14.setVisible(true);
-var layersList = [lyr_OSMStandard_0,lyr_OpenTopoMap_1,lyr_GoogleSatellite_2,lyr_catchment_and_rivers_3,lyr_MapeCatchmentContour_4,lyr_riversandcreeks_5,lyr_TargetvillageofRoadConnection_6,lyr_CulvertCondition_7,lyr_RoadInundationandDeteriorateLevelofRisk_8,lyr_LevelofLandslideRisk_9,lyr_Roadwidth5m_10,lyr_Roadwidth20m_split_11,lyr_RiversandCreekLocation_12,lyr_Road_CL_13,lyr_chainage_150m_int_reviewed_14];
-lyr_catchment_and_rivers_3.set('fieldAliases', {'area': 'Catchment Area (HA)', 'slope': 'Slope', 'C_Lenght': 'Catchment Lenght (m)', 'Discharge': 'Average Discharge (cms)', 'Peak_Flood': 'Peak Flood Level (m)', 'Chainage__': 'Chainage (m)', 'Riv_Crk': 'River and Creek', });
+lyr_OSMStandard_0.setVisible(false);lyr_OpenTopoMap_1.setVisible(false);lyr_GoogleSatellite_2.setVisible(true);lyr_CatchmentandRivers_3.setVisible(false);lyr_MapeCatchmentContour_4.setVisible(false);lyr_riversandcreeks_5.setVisible(true);lyr_TargetvillageofRoadConnection_6.setVisible(true);lyr_CulvertCondition_7.setVisible(true);lyr_RoadInundationandDeteriorateLevelofRisk_8.setVisible(false);lyr_LevelofLandslideRisk_9.setVisible(false);lyr_Roadwidth5m_10.setVisible(false);lyr_Roadwidth20m_split_11.setVisible(false);lyr_RiversandCreek_12.setVisible(true);lyr_Gradient_slope_13.setVisible(true);lyr_Road_CL_14.setVisible(true);lyr_chainage_150m_int_reviewed_15.setVisible(true);
+var layersList = [lyr_OSMStandard_0,lyr_OpenTopoMap_1,lyr_GoogleSatellite_2,lyr_CatchmentandRivers_3,lyr_MapeCatchmentContour_4,lyr_riversandcreeks_5,lyr_TargetvillageofRoadConnection_6,lyr_CulvertCondition_7,lyr_RoadInundationandDeteriorateLevelofRisk_8,lyr_LevelofLandslideRisk_9,lyr_Roadwidth5m_10,lyr_Roadwidth20m_split_11,lyr_RiversandCreek_12,lyr_Gradient_slope_13,lyr_Road_CL_14,lyr_chainage_150m_int_reviewed_15];
+lyr_CatchmentandRivers_3.set('fieldAliases', {'area': 'Catchment Area (HA)', 'slope': 'Slope', 'C_Lenght': 'Catchment Lenght (m)', 'Discharge': 'Average Discharge (cms)', 'Peak_Flood': 'Peak Flood Level (m)', 'Chainage__': 'Chainage (m)', 'Riv_Crk': 'River and Creek', });
 lyr_MapeCatchmentContour_4.set('fieldAliases', {'Elevation': 'Elevation (m)', });
 lyr_riversandcreeks_5.set('fieldAliases', {'FID_final_': 'FID_final_', 'riv_ck': 'Water Bodies Category', });
 lyr_TargetvillageofRoadConnection_6.set('fieldAliases', {'Id': 'Id', 'village': 'Village', });
@@ -249,10 +264,11 @@ lyr_RoadInundationandDeteriorateLevelofRisk_8.set('fieldAliases', {'Id': 'Id', '
 lyr_LevelofLandslideRisk_9.set('fieldAliases', {'Id': 'Id', 'gridcode': 'gridcode', 'Landslide_': 'Landslide Risk Level', });
 lyr_Roadwidth5m_10.set('fieldAliases', {'Id': 'Id', 'offset': 'offset', 'width_3dcm': 'width_3dcm', });
 lyr_Roadwidth20m_split_11.set('fieldAliases', {'Id': 'Id', 'offset': 'Road edge', 'BUFF_DIST': 'Road width', 'ORIG_FID': 'ORIG_FID', });
-lyr_RiversandCreekLocation_12.set('fieldAliases', {'Id': 'Id', 'Crk_Riv_nm': 'Creek and River Names', 'Flow_Statu': 'Flow Status', });
-lyr_Road_CL_13.set('fieldAliases', {'Id': 'Id', 'offset': 'Feature type', 'lenght': 'Lenght (m)', });
-lyr_chainage_150m_int_reviewed_14.set('fieldAliases', {'Chainage (': 'Chainage (m)', 'Elevation': 'Elevation (m)', 'Nothings': 'Nothings', 'Eastings': 'Eastings', });
-lyr_catchment_and_rivers_3.set('fieldImages', {'area': 'TextEdit', 'slope': 'TextEdit', 'C_Lenght': 'TextEdit', 'Discharge': 'TextEdit', 'Peak_Flood': 'TextEdit', 'Chainage__': 'TextEdit', 'Riv_Crk': 'TextEdit', });
+lyr_RiversandCreek_12.set('fieldAliases', {'Id': 'Id', 'Crk_Riv_nm': 'Creek and River Names', 'Flow_Statu': 'Flow Status', });
+lyr_Gradient_slope_13.set('fieldAliases', {'Id': 'Id', 'Gredient__': 'Slope Gradient', 'category': 'Catergory', 'Chainage': 'Chainage', });
+lyr_Road_CL_14.set('fieldAliases', {'Id': 'Id', 'offset': 'Feature type', 'lenght': 'Lenght (m)', });
+lyr_chainage_150m_int_reviewed_15.set('fieldAliases', {'Chainage (': 'Chainage (m)', 'Elevation': 'Elevation (m)', 'Nothings': 'Nothings', 'Eastings': 'Eastings', });
+lyr_CatchmentandRivers_3.set('fieldImages', {'area': 'TextEdit', 'slope': 'TextEdit', 'C_Lenght': 'TextEdit', 'Discharge': 'TextEdit', 'Peak_Flood': 'TextEdit', 'Chainage__': 'TextEdit', 'Riv_Crk': 'TextEdit', });
 lyr_MapeCatchmentContour_4.set('fieldImages', {'Elevation': 'TextEdit', });
 lyr_riversandcreeks_5.set('fieldImages', {'FID_final_': 'Hidden', 'riv_ck': 'TextEdit', });
 lyr_TargetvillageofRoadConnection_6.set('fieldImages', {'Id': 'Hidden', 'village': 'TextEdit', });
@@ -261,21 +277,23 @@ lyr_RoadInundationandDeteriorateLevelofRisk_8.set('fieldImages', {'Id': 'Hidden'
 lyr_LevelofLandslideRisk_9.set('fieldImages', {'Id': 'Hidden', 'gridcode': 'Hidden', 'Landslide_': 'TextEdit', });
 lyr_Roadwidth5m_10.set('fieldImages', {'Id': 'TextEdit', 'offset': 'TextEdit', 'width_3dcm': 'TextEdit', });
 lyr_Roadwidth20m_split_11.set('fieldImages', {'Id': 'Hidden', 'offset': 'TextEdit', 'BUFF_DIST': 'TextEdit', 'ORIG_FID': 'Hidden', });
-lyr_RiversandCreekLocation_12.set('fieldImages', {'Id': 'Hidden', 'Crk_Riv_nm': 'TextEdit', 'Flow_Statu': 'TextEdit', });
-lyr_Road_CL_13.set('fieldImages', {'Id': 'Hidden', 'offset': 'TextEdit', 'lenght': 'TextEdit', });
-lyr_chainage_150m_int_reviewed_14.set('fieldImages', {'Chainage (': 'TextEdit', 'Elevation': 'TextEdit', 'Nothings': 'TextEdit', 'Eastings': 'TextEdit', });
-lyr_catchment_and_rivers_3.set('fieldLabels', {'area': 'inline label - always visible', 'slope': 'inline label - always visible', 'C_Lenght': 'inline label - always visible', 'Discharge': 'inline label - always visible', 'Peak_Flood': 'inline label - always visible', 'Chainage__': 'inline label - always visible', 'Riv_Crk': 'inline label - always visible', });
+lyr_RiversandCreek_12.set('fieldImages', {'Id': 'Hidden', 'Crk_Riv_nm': 'TextEdit', 'Flow_Statu': 'TextEdit', });
+lyr_Gradient_slope_13.set('fieldImages', {'Id': 'Hidden', 'Gredient__': 'TextEdit', 'category': 'TextEdit', 'Chainage': 'TextEdit', });
+lyr_Road_CL_14.set('fieldImages', {'Id': 'Hidden', 'offset': 'TextEdit', 'lenght': 'TextEdit', });
+lyr_chainage_150m_int_reviewed_15.set('fieldImages', {'Chainage (': 'TextEdit', 'Elevation': 'TextEdit', 'Nothings': 'TextEdit', 'Eastings': 'TextEdit', });
+lyr_CatchmentandRivers_3.set('fieldLabels', {'area': 'inline label - always visible', 'slope': 'inline label - always visible', 'C_Lenght': 'inline label - always visible', 'Discharge': 'inline label - always visible', 'Peak_Flood': 'inline label - always visible', 'Chainage__': 'inline label - always visible', 'Riv_Crk': 'inline label - always visible', });
 lyr_MapeCatchmentContour_4.set('fieldLabels', {'Elevation': 'inline label - always visible', });
 lyr_riversandcreeks_5.set('fieldLabels', {'riv_ck': 'inline label - always visible', });
 lyr_TargetvillageofRoadConnection_6.set('fieldLabels', {'village': 'inline label - always visible', });
 lyr_CulvertCondition_7.set('fieldLabels', {'Descpt': 'inline label - always visible', 'Structure_': 'inline label - always visible', 'Lenght': 'inline label - always visible', 'Diameter': 'inline label - always visible', 'Wing_wall': 'inline label - always visible', 'Top_Slab': 'inline label - always visible', 'Bottom_sla': 'inline label - always visible', 'Scring': 'inline label - always visible', 'whole_stru': 'inline label - always visible', 'use': 'inline label - always visible', 'condition': 'inline label - always visible', 'Recomm2': 'inline label - always visible', });
 lyr_RoadInundationandDeteriorateLevelofRisk_8.set('fieldLabels', {'Dete_risk_': 'inline label - always visible', });
 lyr_LevelofLandslideRisk_9.set('fieldLabels', {'Landslide_': 'inline label - always visible', });
-lyr_Roadwidth5m_10.set('fieldLabels', {'Id': 'inline label - always visible', 'offset': 'inline label - always visible', 'width_3dcm': 'inline label - always visible', });
-lyr_Roadwidth20m_split_11.set('fieldLabels', {'offset': 'inline label - always visible', 'BUFF_DIST': 'inline label - always visible', });
-lyr_RiversandCreekLocation_12.set('fieldLabels', {'Crk_Riv_nm': 'inline label - always visible', 'Flow_Statu': 'inline label - always visible', });
-lyr_Road_CL_13.set('fieldLabels', {'offset': 'inline label - always visible', 'lenght': 'inline label - always visible', });
-lyr_chainage_150m_int_reviewed_14.set('fieldLabels', {'Chainage (': 'inline label - always visible', 'Elevation': 'inline label - always visible', 'Nothings': 'inline label - always visible', 'Eastings': 'inline label - always visible', });
-lyr_chainage_150m_int_reviewed_14.on('precompose', function(evt) {
+lyr_Roadwidth5m_10.set('fieldLabels', {'Id': 'no label', 'offset': 'inline label - always visible', 'width_3dcm': 'inline label - always visible', });
+lyr_Roadwidth20m_split_11.set('fieldLabels', {'offset': 'inline label - visible with data', 'BUFF_DIST': 'inline label - always visible', });
+lyr_RiversandCreek_12.set('fieldLabels', {'Crk_Riv_nm': 'inline label - always visible', 'Flow_Statu': 'inline label - always visible', });
+lyr_Gradient_slope_13.set('fieldLabels', {'Gredient__': 'no label', 'category': 'no label', 'Chainage': 'no label', });
+lyr_Road_CL_14.set('fieldLabels', {'offset': 'inline label - always visible', 'lenght': 'inline label - always visible', });
+lyr_chainage_150m_int_reviewed_15.set('fieldLabels', {'Chainage (': 'inline label - always visible', 'Elevation': 'inline label - always visible', 'Nothings': 'inline label - always visible', 'Eastings': 'inline label - always visible', });
+lyr_chainage_150m_int_reviewed_15.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
