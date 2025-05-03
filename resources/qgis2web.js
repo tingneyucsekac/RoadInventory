@@ -17,7 +17,7 @@ var scaleLineControl = new ol.control.ScaleLine({
 map.addControl(scaleLineControl);
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([16437368.413103, -739433.569431, 16450166.545974, -731141.754829], map.getSize());
+map.getView().fit([16440510.006494, -737798.894534, 16446909.122829, -733652.954555], map.getSize());
 
 ////small screen definition
     var hasTouchScreen = map.getViewport().classList.contains('ol-touch');
@@ -965,17 +965,6 @@ document.getElementsByClassName('gcd-gl-btn')[0].className += ' fa fa-search';
 
 //layer search
 
-var searchLayer = new SearchLayer({
-    layer: lyr_catchment_and_rivers_3,
-    colName: 'slope',
-    zoom: 10,
-    collapsed: true,
-    map: map
-});
-map.addControl(searchLayer);
-document.getElementsByClassName('search-layer')[0].getElementsByTagName('button')[0].className += ' fa fa-binoculars';
-document.getElementsByClassName('search-layer-input-search')[0].placeholder = 'Search feature ...';
-    
 
 //scalebar
 

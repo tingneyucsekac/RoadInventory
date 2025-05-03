@@ -8,8 +8,6 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="./resources/ol.css">
         <link rel="stylesheet" href="resources/fontawesome-all.min.css">
-        <link rel="stylesheet" type="text/css" href="resources/horsey.min.css">
-        <link rel="stylesheet" type="text/css" href="resources/ol3-search-layer.min.css">
         <link href="resources/ol-geocoder.min.css" rel="stylesheet">
         <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
         <link rel="stylesheet" href="./resources/qgis2web.css">
@@ -34,7 +32,7 @@
         .ol-control {
             background-color: rgba(255,255,255,.4) !important;
             padding: 2px !important;
-			
+        } 
 		/* Scale Bar Styling */
         .ol-scale-line {
             font-size: 10px !important; /* Reduce font size */
@@ -44,7 +42,7 @@
             padding: 2px 5px !important; /* Adjust padding */
             border-radius: 3px; /* Add rounded corners */
             border: 1px solid black; /* Thin black border for contrast */
-        } 
+        }
         </style>
 
         <style>
@@ -64,30 +62,15 @@
                 <div id="popup-content"></div>
             </div>
         </div>
-		
-		<!-- North Arrow -->
-    <div id="north-arrow" style="
-        position: absolute;
-        top: 10px;
-        left: 25px;
-        z-index: 1000;
-    ">
-        <img src="images/north_arrow.png" alt="North Arrow" width="75">
-    </div>
-
-    
         <script src="resources/qgis2web_expressions.js"></script>
         <script src="./resources/functions.js"></script>
         <script src="./resources/ol.js"></script>
-        <script src="resources/horsey.min.js"></script>
-        <script src="resources/ol3-search-layer.js"></script>
         <script src="./resources/ol-layerswitcher.js"></script>
         <script src="resources/ol-geocoder.js"></script>
-        <script src="layers/catchment_and_rivers_3.js"></script><script src="layers/MapeCatchmentContour_4.js"></script><script src="layers/riversandcreeks_5.js"></script><script src="layers/TargetvillageofRoadConnection_6.js"></script><script src="layers/CulvertCondition_7.js"></script><script src="layers/RoadInundationandDeteriorateLevelofRisk_8.js"></script><script src="layers/LevelofLandslideRisk_9.js"></script><script src="layers/Roadwidth5m_10.js"></script><script src="layers/Roadwidth20m_split_11.js"></script><script src="layers/RiversandCreekLocation_12.js"></script><script src="layers/Road_CL_13.js"></script><script src="layers/chainage_150m_int_reviewed_14.js"></script>
-        <script src="styles/catchment_and_rivers_3_style.js"></script><script src="styles/MapeCatchmentContour_4_style.js"></script><script src="styles/riversandcreeks_5_style.js"></script><script src="styles/TargetvillageofRoadConnection_6_style.js"></script><script src="styles/CulvertCondition_7_style.js"></script><script src="styles/RoadInundationandDeteriorateLevelofRisk_8_style.js"></script><script src="styles/LevelofLandslideRisk_9_style.js"></script><script src="styles/Roadwidth5m_10_style.js"></script><script src="styles/Roadwidth20m_split_11_style.js"></script><script src="styles/RiversandCreekLocation_12_style.js"></script><script src="styles/Road_CL_13_style.js"></script><script src="styles/chainage_150m_int_reviewed_14_style.js"></script>
+        <script src="layers/CatchmentandRivers_3.js"></script><script src="layers/MapeCatchmentContour_4.js"></script><script src="layers/riversandcreeks_5.js"></script><script src="layers/TargetvillageofRoadConnection_6.js"></script><script src="layers/CulvertCondition_7.js"></script><script src="layers/RoadInundationandDeteriorateLevelofRisk_8.js"></script><script src="layers/LevelofLandslideRisk_9.js"></script><script src="layers/Roadwidth5m_10.js"></script><script src="layers/Roadwidth20m_split_11.js"></script><script src="layers/RiversandCreek_12.js"></script><script src="layers/Gradient_slope_13.js"></script><script src="layers/Road_CL_14.js"></script><script src="layers/chainage_150m_int_reviewed_15.js"></script>
+        <script src="styles/CatchmentandRivers_3_style.js"></script><script src="styles/MapeCatchmentContour_4_style.js"></script><script src="styles/riversandcreeks_5_style.js"></script><script src="styles/TargetvillageofRoadConnection_6_style.js"></script><script src="styles/CulvertCondition_7_style.js"></script><script src="styles/RoadInundationandDeteriorateLevelofRisk_8_style.js"></script><script src="styles/LevelofLandslideRisk_9_style.js"></script><script src="styles/Roadwidth5m_10_style.js"></script><script src="styles/Roadwidth20m_split_11_style.js"></script><script src="styles/RiversandCreek_12_style.js"></script><script src="styles/Gradient_slope_13_style.js"></script><script src="styles/Road_CL_14_style.js"></script><script src="styles/chainage_150m_int_reviewed_15_style.js"></script>
         <script src="./layers/layers.js" type="text/javascript"></script> 
         <script src="./resources/Autolinker.min.js"></script>
         <script src="./resources/qgis2web.js"></script>
-		
-		</body>
-  </html>
+    </body>
+</html>
