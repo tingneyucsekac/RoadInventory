@@ -1,3 +1,4 @@
+
 var map = new ol.Map({
     target: 'map',
     renderer: 'canvas',
@@ -16,7 +17,7 @@ var scaleLineControl = new ol.control.ScaleLine({
 map.addControl(scaleLineControl);
 
 //initial view - epsg:3857 coordinates if not "Match project CRS"
-map.getView().fit([16440510.006494, -737798.894534, 16446909.122829, -733652.954555], map.getSize());
+map.getView().fit([16434836.061145, -739764.283887, 16448249.278184, -732391.222910], map.getSize());
 
 ////small screen definition
     var hasTouchScreen = map.getViewport().classList.contains('ol-touch');
@@ -76,7 +77,8 @@ closer.onclick = function() {
     return false;
 };
 var overlayPopup = new ol.Overlay({
-    element: container
+    element: container,
+	autoPan: true
 });
 map.addOverlay(overlayPopup)
     
@@ -125,7 +127,7 @@ var doHover = false;
 function createPopupField(currentFeature, currentFeatureKeys, layer) {
     var popupText = '';
     for (var i = 0; i < currentFeatureKeys.length; i++) {
-        if (currentFeatureKeys[i] != 'geometry') {
+        if (currentFeatureKeys[i] != 'geometry' && currentFeatureKeys[i] != 'layerObject' && currentFeatureKeys[i] != 'idO') {
             var popupField = '';
             if (layer.get('fieldLabels')[currentFeatureKeys[i]] == "hidden field") {
                 continue;
@@ -283,9 +285,9 @@ function onPointerMove(evt) {
 
     if (doHover) {
         if (popupText) {
+			content.innerHTML = popupText;
+            container.style.display = 'block';
             overlayPopup.setPosition(coord);
-            content.innerHTML = popupText;
-            container.style.display = 'block';        
         } else {
             container.style.display = 'none';
             closer.blur();
@@ -301,9 +303,9 @@ var featuresPopupActive = false;
 
 function updatePopup() {
     if (popupContent) {
-        overlayPopup.setPosition(popupCoord);
         content.innerHTML = popupContent;
         container.style.display = 'block';
+		overlayPopup.setPosition(popupCoord);
     } else {
         container.style.display = 'none';
         closer.blur();
@@ -371,9 +373,9 @@ function onSingleClickWMS(evt) {
     if (doHover || sketch) {
         return;
     }
-	if (!featuresPopupActive) {
-		popupContent = '';
-	}
+    if (!featuresPopupActive) {
+        popupContent = '';
+    }
     var coord = evt.coordinate;
     var viewProjection = map.getView().getProjection();
     var viewResolution = map.getView().getResolution();
@@ -384,12 +386,12 @@ function onSingleClickWMS(evt) {
                 evt.coordinate, viewResolution, viewProjection, {
                     'INFO_FORMAT': 'text/html',
                 });
-            if (url) {				
-                const wmsTitle = wms_layers[i][0].get('popuplayertitle');					
+            if (url) {
+                const wmsTitle = wms_layers[i][0].get('popuplayertitle');
                 var ldsRoller = '<div id="lds-roller"><img class="lds-roller-img" style="height: 25px; width: 25px;"></img></div>';
-				
+
                 popupCoord = coord;
-				popupContent += ldsRoller;
+                popupContent += ldsRoller;
                 updatePopup();
 
                 var timeoutPromise = new Promise((resolve, reject) => {
@@ -398,30 +400,44 @@ function onSingleClickWMS(evt) {
                     }, 5000); // (5 second)
                 });
 
-                Promise.race([
-                    fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(url)),
-                    timeoutPromise
-                ])
-                .then((response) => {
-                    if (response.ok) {
-                        return response.text();
+                // Function to try fetch with different option
+                function tryFetch(urls) {
+                    if (urls.length === 0) {
+                        return Promise.reject(new Error('All fetch attempts failed'));
                     }
-                })
-                .then((html) => {
-                    if (html.indexOf('<table') !== -1) {
-                        popupContent += '<a><b>' + wmsTitle + '</b></a>';
-                        popupContent += html + '<p></p>';
-                        updatePopup();
-                    }
-                })
-                // .catch((error) => {
-				// })
-                .finally(() => {
-                    setTimeout(() => {
-                        var loaderIcon = document.querySelector('#lds-roller');
-						loaderIcon.remove();
-                    }, 500); // (0.5 second)	
-                });
+                    return fetch(urls[0])
+                        .then((response) => {
+                            if (response.ok) {
+                                return response.text();
+                            } else {
+                                throw new Error('Fetch failed');
+                            }
+                        })
+                        .catch(() => tryFetch(urls.slice(1))); // Try next URL
+                }
+
+                // List of URLs to try
+                // The first URL is the original, the second is the encoded version, and the third is the proxy
+                const urlsToTry = [
+                    url,
+                    encodeURIComponent(url),
+                    'https://api.allorigins.win/raw?url=' + encodeURIComponent(url)
+                ];
+
+                Promise.race([tryFetch(urlsToTry), timeoutPromise])
+                    .then((html) => {
+                        if (html.indexOf('<table') !== -1) {
+                            popupContent += '<a><b>' + wmsTitle + '</b></a>';
+                            popupContent += html + '<p></p>';
+                            updatePopup();
+                        }
+                    })
+                    .finally(() => {
+                        setTimeout(() => {
+                            var loaderIcon = document.querySelector('#lds-roller');
+                            if (loaderIcon) loaderIcon.remove();
+                        }, 500); // (0.5 second)
+                    });
             }
         }
     }
@@ -441,7 +457,7 @@ var Title = new ol.control.Control({
     element: (() => {
         var titleElement = document.createElement('div');
         titleElement.className = 'top-right-title ol-control';
-        titleElement.innerHTML = '<h2 class="project-title">Road Inventory Webmapping</h2>';
+        titleElement.innerHTML = '<h2 class="project-title">Rural Road Management and Reporting Portal</h2>';
         return titleElement;
     })(),
     target: 'top-right-container'
@@ -458,7 +474,7 @@ var Abstract = new ol.control.Control({
 
         var linkElement = document.createElement('a');
 
-        if (551 > 240) {
+        if (692 > 240) {
             linkElement.setAttribute("onmouseenter", "showAbstract()");
             linkElement.setAttribute("onmouseleave", "hideAbstract()");
             linkElement.innerHTML = 'i';
@@ -472,13 +488,13 @@ var Abstract = new ol.control.Control({
             window.showAbstract = function() {
                 linkElement.classList.remove("project-abstract");
                 linkElement.classList.add("project-abstract-uncollapsed");
-                linkElement.innerHTML = 'This web map is designed to enhance road inventory data for rural roads in Papua New Guinea. Many roads lack essential data for monitoring, upgrades, and connectivity. The platform allows government bodies, engineers, and communities to identify road issues and prioritize maintenance. Its interactive interface enables users to explore road conditions easily, supporting better decision-making for infrastructure development. <br /><br />Credits: Mape Communities, PSR&I, SSLS<br />Webmap Designer: Dr. Tingneyuc Sekac<br />Common Projection systerm: UTM Zone 55S, WGS84';
+                linkElement.innerHTML = 'This interactive web map serves as a central platform for rural road assessment and planning in Papua New Guinea. It goes beyond simple road inventory by incorporating basic hydrological and hydraulic insights, as well as optimal route planning and visualization tools. The system responds to the ongoing lack of structured road data that is critical for maintenance, upgrades, and improving rural connectivity. Through its user-friendly interface, the platform enables government agencies, engineers, and communities to explore road conditions, assess risks, and prioritize infrastructure development effectively.<br /><br />Credits: Mape Communities, PSR&I, SSLS<br />Webmap Designer: Dr. Tingneyuc Sekac<br />';
             }
 
             hideAbstract();
         } else {
             linkElement.classList.add("project-abstract-uncollapsed");
-            linkElement.innerHTML = 'This web map is designed to enhance road inventory data for rural roads in Papua New Guinea. Many roads lack essential data for monitoring, upgrades, and connectivity. The platform allows government bodies, engineers, and communities to identify road issues and prioritize maintenance. Its interactive interface enables users to explore road conditions easily, supporting better decision-making for infrastructure development. <br /><br />Credits: Mape Communities, PSR&I, SSLS<br />Webmap Designer: Dr. Tingneyuc Sekac<br />Common Projection systerm: UTM Zone 55S, WGS84';
+            linkElement.innerHTML = 'This interactive web map serves as a central platform for rural road assessment and planning in Papua New Guinea. It goes beyond simple road inventory by incorporating basic hydrological and hydraulic insights, as well as optimal route planning and visualization tools. The system responds to the ongoing lack of structured road data that is critical for maintenance, upgrades, and improving rural connectivity. Through its user-friendly interface, the platform enables government agencies, engineers, and communities to explore road conditions, assess risks, and prioritize infrastructure development effectively.<br /><br />Credits: Mape Communities, PSR&I, SSLS<br />Webmap Designer: Dr. Tingneyuc Sekac<br />';
         }
 
         titleElement.appendChild(linkElement);
@@ -964,6 +980,17 @@ document.getElementsByClassName('gcd-gl-btn')[0].className += ' fa fa-search';
 
 //layer search
 
+var searchLayer = new SearchLayer({
+    layer: lyr_PointofInterest_29,
+    colName: 'Ele',
+    zoom: 10,
+    collapsed: true,
+    map: map
+});
+map.addControl(searchLayer);
+document.getElementsByClassName('search-layer')[0].getElementsByTagName('button')[0].className += ' fa fa-binoculars';
+document.getElementsByClassName('search-layer-input-search')[0].placeholder = 'Search feature ...';
+    
 
 //scalebar
 

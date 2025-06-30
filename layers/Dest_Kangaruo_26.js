@@ -1,0 +1,1 @@
+var json_Dest_Kangaruo_26 = {"type":"FeatureCollection","name":"Dest_Kangaruo_26","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"dest":"dest. Kangaruo"},"geometry":{"type":"Point","coordinates":[147.702122824980677,-6.581158687280251]}}]}

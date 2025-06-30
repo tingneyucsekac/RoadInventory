@@ -27,7 +27,8 @@ var style_TargetvillageofRoadConnection_6 = function(feature, resolution){
         variables: {}
     };
     
-    var labelText = ""; var value = feature.get("village");
+    var labelText = ""; 
+    var value = feature.get("village");
     var labelFont = "10px, sans-serif";
     var labelFill = "#000000";
     var bufferColor = "";

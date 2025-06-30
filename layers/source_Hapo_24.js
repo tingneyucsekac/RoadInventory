@@ -1,0 +1,1 @@
+var json_source_Hapo_24 = {"type":"FeatureCollection","name":"source_Hapo_24","crs":{"type":"name","properties":{"name":"urn:ogc:def:crs:OGC:1.3:CRS84"}},"features":[{"type":"Feature","properties":{"source":"Source.Hapo"},"geometry":{"type":"Point","coordinates":[147.747754086428102,-6.601641385147404]}}]}

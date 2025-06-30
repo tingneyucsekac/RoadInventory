@@ -8,6 +8,8 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="./resources/ol.css">
         <link rel="stylesheet" href="resources/fontawesome-all.min.css">
+        <link rel="stylesheet" type="text/css" href="resources/horsey.min.css">
+        <link rel="stylesheet" type="text/css" href="resources/ol3-search-layer.min.css">
         <link href="resources/ol-geocoder.min.css" rel="stylesheet">
         <link rel="stylesheet" href="./resources/ol-layerswitcher.css">
         <link rel="stylesheet" href="./resources/qgis2web.css">
@@ -33,16 +35,6 @@
             background-color: rgba(255,255,255,.4) !important;
             padding: 2px !important;
         } 
-		/* Scale Bar Styling */
-        .ol-scale-line {
-            font-size: 10px !important; /* Reduce font size */
-            font-weight: bold; /* Make text more readable */
-            color: black !important; /* Ensure text is black */
-            background: rgba(255, 255, 255, 0.8) !important; /* White background with slight transparency */
-            padding: 2px 5px !important; /* Adjust padding */
-            border-radius: 3px; /* Add rounded corners */
-            border: 1px solid black; /* Thin black border for contrast */
-        }
         </style>
 
         <style>
@@ -53,7 +45,7 @@
             margin: 0;
         }
         </style>
-        <title>Road Inventory Webmapping</title>
+        <title>Rural Road Management and Reporting Portal</title>
     </head>
     <body>
         <div id="map">
@@ -65,10 +57,12 @@
         <script src="resources/qgis2web_expressions.js"></script>
         <script src="./resources/functions.js"></script>
         <script src="./resources/ol.js"></script>
+        <script src="resources/horsey.min.js"></script>
+        <script src="resources/ol3-search-layer.js"></script>
         <script src="./resources/ol-layerswitcher.js"></script>
         <script src="resources/ol-geocoder.js"></script>
-        <script src="layers/CatchmentandRivers_3.js"></script><script src="layers/MapeCatchmentContour_4.js"></script><script src="layers/riversandcreeks_5.js"></script><script src="layers/TargetvillageofRoadConnection_6.js"></script><script src="layers/CulvertCondition_7.js"></script><script src="layers/RoadInundationandDeteriorateLevelofRisk_8.js"></script><script src="layers/LevelofLandslideRisk_9.js"></script><script src="layers/Roadwidth5m_10.js"></script><script src="layers/Roadwidth20m_split_11.js"></script><script src="layers/RiversandCreek_12.js"></script><script src="layers/Gradient_slope_13.js"></script><script src="layers/Road_CL_14.js"></script><script src="layers/chainage_150m_int_reviewed_15.js"></script>
-        <script src="styles/CatchmentandRivers_3_style.js"></script><script src="styles/MapeCatchmentContour_4_style.js"></script><script src="styles/riversandcreeks_5_style.js"></script><script src="styles/TargetvillageofRoadConnection_6_style.js"></script><script src="styles/CulvertCondition_7_style.js"></script><script src="styles/RoadInundationandDeteriorateLevelofRisk_8_style.js"></script><script src="styles/LevelofLandslideRisk_9_style.js"></script><script src="styles/Roadwidth5m_10_style.js"></script><script src="styles/Roadwidth20m_split_11_style.js"></script><script src="styles/RiversandCreek_12_style.js"></script><script src="styles/Gradient_slope_13_style.js"></script><script src="styles/Road_CL_14_style.js"></script><script src="styles/chainage_150m_int_reviewed_15_style.js"></script>
+        <script src="layers/Contour_4.js"></script><script src="layers/CatchmentandRivers_5.js"></script><script src="layers/TargetvillageofRoadConnection_6.js"></script><script src="layers/ExistingCulvertCondition_7.js"></script><script src="layers/ExistingRoadInundationandDeteriorateLevelofRisk_8.js"></script><script src="layers/ExistingRoadLevelofLandslideRisk_9.js"></script><script src="layers/Roadwidth5m_10.js"></script><script src="layers/ExistingRoadwidth20m_split_11.js"></script><script src="layers/RiversandCreek_12.js"></script><script src="layers/ExistingRouteGradient_slope_13.js"></script><script src="layers/CatchmentBoundary_14.js"></script><script src="layers/GonovoRiverCatchment_15.js"></script><script src="layers/riversandcreeks_16.js"></script><script src="layers/Road_CL_17.js"></script><script src="layers/ExistingRouteChainage_18.js"></script><script src="layers/GonovoRiverCatchmentBoundary_19.js"></script><script src="layers/Gonovo_Catchment_Point_location_20.js"></script><script src="layers/OptimalRouteASlopeGradient_21.js"></script><script src="layers/OptimalRouteBSlopeGradient_22.js"></script><script src="layers/OptimalRouteCSlope_gradient_23.js"></script><script src="layers/source_Hapo_24.js"></script><script src="layers/OptimalRouteAChainage_25.js"></script><script src="layers/Dest_Kangaruo_26.js"></script><script src="layers/OptimalRouteBChainage_27.js"></script><script src="layers/OptimalRouteCChainage_28.js"></script><script src="layers/PointofInterest_29.js"></script>
+        <script src="styles/Contour_4_style.js"></script><script src="styles/CatchmentandRivers_5_style.js"></script><script src="styles/TargetvillageofRoadConnection_6_style.js"></script><script src="styles/ExistingCulvertCondition_7_style.js"></script><script src="styles/ExistingRoadInundationandDeteriorateLevelofRisk_8_style.js"></script><script src="styles/ExistingRoadLevelofLandslideRisk_9_style.js"></script><script src="styles/Roadwidth5m_10_style.js"></script><script src="styles/ExistingRoadwidth20m_split_11_style.js"></script><script src="styles/RiversandCreek_12_style.js"></script><script src="styles/ExistingRouteGradient_slope_13_style.js"></script><script src="styles/CatchmentBoundary_14_style.js"></script><script src="styles/GonovoRiverCatchment_15_style.js"></script><script src="styles/riversandcreeks_16_style.js"></script><script src="styles/Road_CL_17_style.js"></script><script src="styles/ExistingRouteChainage_18_style.js"></script><script src="styles/GonovoRiverCatchmentBoundary_19_style.js"></script><script src="styles/Gonovo_Catchment_Point_location_20_style.js"></script><script src="styles/OptimalRouteASlopeGradient_21_style.js"></script><script src="styles/OptimalRouteBSlopeGradient_22_style.js"></script><script src="styles/OptimalRouteCSlope_gradient_23_style.js"></script><script src="styles/source_Hapo_24_style.js"></script><script src="styles/OptimalRouteAChainage_25_style.js"></script><script src="styles/Dest_Kangaruo_26_style.js"></script><script src="styles/OptimalRouteBChainage_27_style.js"></script><script src="styles/OptimalRouteCChainage_28_style.js"></script><script src="styles/PointofInterest_29_style.js"></script>
         <script src="./layers/layers.js" type="text/javascript"></script> 
         <script src="./resources/Autolinker.min.js"></script>
         <script src="./resources/qgis2web.js"></script>
