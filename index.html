@@ -49,6 +49,19 @@
     </head>
     <body>
         <div id="map">
+		<button id="panToCenterBtn" style="
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  background-color: white;
+  border: 1px solid #555;
+  padding: 5px 10px;
+  cursor: pointer;
+">
+Pan to Center
+</button>
+
             <div id="popup" class="ol-popup">
                 <a href="#" id="popup-closer" class="ol-popup-closer"></a>
                 <div id="popup-content"></div>
